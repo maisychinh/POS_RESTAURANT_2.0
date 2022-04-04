@@ -1,0 +1,24 @@
+.button{
+    background-color: #2c3a57;
+    border-radius: 15px;
+    width: 23%;
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 3;
+}
+.amount { 
+    color:#2c3a57;
+    background-color: white;
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    margin: 0.5rem;
+}
+@media (min-width: 768px) {
+    .button {
+        display: none;
+    }
+}

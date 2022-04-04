@@ -1,0 +1,12 @@
+.container {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.3)),
+    url("https://sulaindianrestaurant.com/wp-content/uploads/2020/12/indian-food-main-street-1200x800.jpg");
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+}
+.content {
+  height: calc(100vh - 80px);
+  max-height: 100%;
+  padding: 0rem calc((100vw - 1300px) / 2);
+}

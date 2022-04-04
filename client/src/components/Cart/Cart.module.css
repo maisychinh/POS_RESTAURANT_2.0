@@ -1,0 +1,15 @@
+.cart {
+    padding: 0.5rem;
+    height:80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.cartbody{
+    overflow-y: scroll;
+}
+@media (min-width: 768px){
+    .cart {
+        height: 100vh;
+    }
+}

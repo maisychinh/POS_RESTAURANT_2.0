@@ -1,0 +1,124 @@
+.navbar {
+  background: transparent;
+  height: 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content:center;
+  align-items: center;
+  font-weight: 700;
+}
+.navlink {
+  color: #fff;
+  font-size: 2rem;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  grid-column: 2/3;
+}
+.navicon {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  grid-column: 3/4;
+  
+}
+.navicon p {
+  font-weight: bold;
+}
+.bar{
+  color: #fff;
+  font-size: 2.5rem;
+  display: none;
+  cursor: pointer;
+}
+.outline{
+  display: flex;
+  justify-content: center;
+}
+.button{
+  font-size: 1.3rem;
+  margin: 0 0.5rem 0 0rem;
+  background-color: transparent;
+  color: white;
+  font-weight: bold;
+  border: 1px solid #e9ba23;
+  box-shadow: 0.8px 1.6px #e9ba23;
+  padding: 0.3rem 1rem;
+  transition: 0.2s ease-out;
+  margin: 0 1.5rem;
+}
+.button:hover{
+  background-color: #ffc500;
+  cursor: pointer;
+  color: black;
+  transition: 0.2s ease-out;
+}
+.removeButton{
+  font-size: 2.5rem;
+  color: black;
+  display: none;
+  cursor: pointer;
+}
+.aboutUs{
+  display: none;
+  cursor: pointer;
+}
+@media (max-width: 1200px) {
+  .button{
+    font-size: 1rem;
+    margin: 0 1rem;
+  }
+}
+@media (max-width:960px){
+  .aboutUs{
+    display: block;
+    font-size: 1.5rem;
+    margin: 1rem 0rem;
+    color: black;
+  }
+  .bar{
+    display: block;
+  }
+  .outline {
+    justify-content: flex-end;
+    padding: 0 15%;
+  }
+  .button{
+    border: none;
+    box-shadow: none;
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    color: black;
+  }
+  .navicon{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem 0;
+    position: absolute;
+    right: -100%;
+    top: 0;
+  }
+  .navicon.active {
+    background-color:#ffc500;
+    right: 0;
+    transition: all 0.2s ease-in-out;
+    z-index: 1;
+    height: 100vh;
+    width: 30%;
+  }
+  .removeButton{
+    display: block;
+    position:absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-50%,50%);
+  }
+}
+@media (max-width: 500px){
+  .navicon.active{
+    width: 100%;
+  }
+}

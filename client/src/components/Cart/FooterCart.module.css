@@ -1,0 +1,33 @@
+.totalprice {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 1.2rem;
+    height: 1.8rem;
+}
+.textcustom {
+    color: #F00008;
+}
+.footerCart p{
+    text-align: right;
+}
+.footerCart button {
+    padding: 0.5rem;
+    width: 100%;
+    background-color: #F00008;
+    font-weight: bold;
+    color: white;
+    border:none;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+@media (min-width: 768px){
+    .totalprice {
+        font-size: 1.5rem;
+        height: 3rem;
+    }
+    .footerCart button {
+        font-size: 1.3rem;
+    }
+}

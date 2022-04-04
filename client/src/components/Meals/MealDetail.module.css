@@ -1,0 +1,176 @@
+.image {
+    display: flex;
+    justify-content:center;
+    flex-grow: 2;
+}
+.textAlign {
+    text-align: right;
+}
+
+.image img {
+    width: 4rem;
+    height: 4rem;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 4px solid #ccc;
+}
+.introduce {
+    font-weight: bold;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 0.3rem;
+}
+.quantity {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.quantity p {
+    font-weight: bold
+}
+.quantity div {
+    display: flex;
+    font-weight: bold;
+    font-size: 1.2rem;
+    align-items: center;
+}
+.quantity button {
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid black;
+    height: 2rem;
+    width:  2rem;
+    margin: 0.5rem;
+    font-size: 1.5rem;
+}
+.info {
+    font-weight: bold;
+    height: 100px;
+    overflow-y: scroll;
+}
+.info span{
+    color: rgb(134, 134, 134);
+}
+.footerinfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footerinfo div{
+    font-weight: bold;
+}
+.extrasinfo {
+    font-style: italic;
+    font-weight: normal;
+    font-size: 0.6rem;
+    color:rgb(134, 134, 134);
+}
+.cartbutton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F00008;
+    color: white;
+    border-radius: 5px;
+    height: 2.4rem;
+    margin-top: 0.5rem;
+}
+.cartbutton div {
+    margin: 0.5rem;
+}
+.checkbox {
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+.checkbox span {
+    background-color: #F00008;
+}
+.rightdetail{
+    flex-grow: 8;
+    padding: 0.5rem;
+}
+@media (min-width: 768px) {
+    .details {
+        display: flex;
+        justify-content: space-between;
+    }    
+    .image img {
+        width: 80%;
+        height: 6rem;
+    }
+    .introduce {
+        font-size: 1.1rem;
+    }
+    .quantity {
+        font-size: 1.2rem;
+    }
+    .footerinfo {
+        font-size: 1.2rem;
+    }
+    .extrasinfo {
+        font-size: 0.9rem;
+    }
+    .checkbox {
+        font-size: 0.9rem;
+    }
+    .rightdetail{
+        padding: 0.5rem;
+    }
+    .info {
+        height: 110px;
+    }
+}
+@media (min-width:998px){
+    .image img{
+        height:8rem;
+    }
+    .introduce{
+        grid-gap: 0.6rem;
+        margin-bottom: 1rem;
+    }
+    .info {
+        height: 120px;
+    }
+}
+@media (min-width:1080px){
+    .image img{
+        height:9rem;
+        width:80%;
+    }
+    .introduce{
+        grid-gap: 0.6rem;
+        margin-bottom: 1rem;
+    }
+    .quantity {
+        font-size: 1.5rem;
+    }
+    .footerinfo {
+        font-size: 1.5rem;
+    }
+    .extrasinfo {
+        font-size: 1.2rem;
+    }
+    .checkbox {
+        font-size: 1.2rem;
+    }
+    .rightdetail{
+        padding: 0.5rem;
+    }
+    .cartbutton {
+        height: 3rem;
+        margin-top: 1rem;
+        font-size: 1.2rem;
+    }
+}
+@media (min-width:1200px){
+    .image img{
+        height:10rem;
+        width:80%;
+    }
+    .image {
+        display: flex;
+        justify-content:center;
+        flex-grow: 1;
+    }
+}

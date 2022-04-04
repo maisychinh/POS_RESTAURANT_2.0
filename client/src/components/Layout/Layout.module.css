@@ -1,0 +1,32 @@
+.main{
+    background-color: #f8f8f8;
+}
+.mainpage{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 3rem 6.5rem auto;
+    grid-gap: 0.5rem
+}
+@media (min-width: 992px) {
+    .mainpage {
+      grid-template-rows: 4rem 9.5rem auto;
+    }
+  }
+  @media (min-width: 992px) {
+    /* #root {
+      grid-template-rows: 4rem 9.5rem auto;
+    } */
+    .mainpage{
+      margin: 0rem 1rem;
+    }
+  }
+  @media (min-width: 1200px) {
+    .mainpage{
+      margin: 0rem 3rem;
+    }
+  }
+  @media (min-width: 1400px) {
+    .mainpage{
+      margin: 0rem 7rem;
+    }
+  }

@@ -1,0 +1,57 @@
+.success {
+    font-size: 5rem;
+    color: rgb(25, 117, 40);
+}
+.warning {
+    font-size: 5rem;
+    color: rgb(255, 239, 16);
+}
+.text {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 2rem;
+}
+@media (min-width: 768px) {
+    .success {
+        font-size: 7rem;
+    }
+    .warning {
+        font-size: 7rem;
+    }
+}
+@media (min-width: 456px) {
+    .text{
+        font-size: 1.4rem;
+    }
+}
+@media (min-width: 820px) {
+    .success {
+        font-size: 9rem;
+    }
+    .warning {
+        font-size: 9rem;
+    }
+    .text{
+        font-size: 2rem;
+    }
+}
+@media (min-width: 1120px) {
+    .success {
+        font-size: 12rem;
+    }
+    .warning {
+        font-size: 12rem;
+    }
+    .text{
+        font-size: 2.3rem;
+    }
+}
+@media (min-width: 120p5x) {
+    .success {
+        font-size: 15rem;
+    }
+    .warning {
+        font-size: 15rem;
+    }
+}

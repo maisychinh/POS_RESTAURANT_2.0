@@ -1,0 +1,51 @@
+.headerCart {
+    display: flex;
+    font-weight: bold;
+    align-items: center;
+    margin: 1rem 0; 
+    
+}
+.headerCart button {
+    flex-grow: 2;
+    background-color:#e9f0ff;
+    border: none;
+    border-radius: 20px;
+    height: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+.carticon {
+    flex-grow:0;
+    margin-right:0.5rem;
+}
+
+.headerCart div{
+    flex-grow: 6;
+    color: #F00008;
+}
+@media (min-width: 768px) {
+    .headerCart div{
+        font-size:1.3rem;
+    }
+    .headerCart button {
+        font-size: 1rem;
+    }
+}
+@media (min-width: 1000px) {
+    .headerCart div{
+        font-size:1.5rem;
+    }
+    .headerCart button {
+        font-size: 1.3rem;
+        height:2rem;
+    }
+}
+@media (min-width: 1200px) {
+    .headerCart div{
+        font-size:1.5rem;
+    }
+    .headerCart button {
+        font-size: 1.3rem;
+        height:2.5rem;
+    }
+}

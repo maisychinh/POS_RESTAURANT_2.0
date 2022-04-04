@@ -1,0 +1,22 @@
+.wrapper {
+    display: grid;
+    margin-top: 0.5em;
+    grid-template-columns: 2rem auto 2rem;
+    align-items: center;
+    grid-column: 1/4;
+}
+.forward svg{
+    font-size: 2.5rem;
+    color: #2c3a57;
+    cursor: pointer;
+}
+.backward svg{
+    font-size: 2.5rem;
+    color: #2c3a57;
+    cursor: pointer;
+}
+@media (min-width: 768px) {
+    .wrapper{
+        grid-column: 1/3;
+    }
+}

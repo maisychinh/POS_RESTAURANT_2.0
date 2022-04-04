@@ -1,0 +1,16 @@
+
+.cartactions {
+    display: none;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+@media (min-width: 768px) {
+    .cartactions{
+        display:block;
+        grid-column: 3/4;
+        grid-row: 1/4;
+        height: 100vh;
+    }
+}
+.container{
+    color: #1a4d63;
+}
