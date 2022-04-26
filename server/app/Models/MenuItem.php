@@ -11,7 +11,7 @@ class MenuItem extends Model
 
     protected $table = 'menu_items';
     protected $guarded = [];
-    protected $primaryKey = 'item_id';
+    protected $primaryKey = 'id';
     protected $casts = [
         'extras' => 'array'
     ];

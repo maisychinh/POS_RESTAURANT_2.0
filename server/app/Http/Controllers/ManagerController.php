@@ -36,7 +36,7 @@ class ManagerController extends Controller
         // $role = Session::get('role');
         // if(!($role && $role == 'manager')) return Redirect::to('/api/home');
         
-        $item_id = $request['item_id'];
+        $item_id = $request['id'];
         MenuItem::findOrFail($item_id)->update($request->all());
         $result = MenuItem::findOrFail($item_id);
         return $result;
@@ -47,7 +47,7 @@ class ManagerController extends Controller
         // $role = Session::get('role');
         // if(!($role && $role == 'manager')) return Redirect::to('/api/home');
 
-        $item_id = $request['item_id'];
+        $item_id = $request['id'];
         MenuItem::findOrFail($item_id)->delete();
     }
 }

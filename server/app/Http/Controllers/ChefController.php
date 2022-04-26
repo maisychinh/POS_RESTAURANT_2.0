@@ -11,13 +11,7 @@ use App\Models\Order;
 session_start();
 
 class ChefController extends Controller
-{
-    // public function checkChef(){
-    //     $role = Session::get('role');
-    //     if($role && $role == 'chef') return Redirect::to('/api/chef');
-    //     else return Redirect::to('/api/home')->send();
-    // }
-    
+{   
     //GET: /chef
     //Trả về danh sách các đơn hàng đã thanh toán và đang nấu
     public function index(){

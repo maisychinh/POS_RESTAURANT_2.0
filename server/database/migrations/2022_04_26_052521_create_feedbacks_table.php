@@ -13,9 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('categories', function (Blueprint $table) {
-            $table->increments('category_id');
-            $table->string('name');
+        Schema::create('feedbacks', function (Blueprint $table) {
+            $table->increments('feedback_id');
+            $table->integer('item_id')->unsigned();
+            $table->integer('user_id')->unsigned();
+            $table->float('rating',2,1);
+            $table->text('review')->nullable();
             $table->timestamps();
         });
     }
@@ -27,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('categories');
+        Schema::dropIfExists('feedbacks');
     }
 };

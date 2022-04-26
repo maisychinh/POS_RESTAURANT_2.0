@@ -14,13 +14,14 @@ return new class extends Migration
     public function up()
     {
         Schema::create('menu_items', function (Blueprint $table) {
-            $table->increments('item_id');
+            $table->increments('id');
             $table->string('name');
             $table->integer('price');
             $table->text('description');
             $table->string('image');
-            $table->integer('category_id')->unsigned();
+            $table->integer('category')->unsigned();
             $table->json('extras');
+            $table->float('rating',2,1)->default(0.0);
             $table->boolean('enable')->default(true);
             $table->timestamps();
         });

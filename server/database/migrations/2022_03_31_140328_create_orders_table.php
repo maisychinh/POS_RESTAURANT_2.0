@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('orders', function (Blueprint $table) {
-            $table->increments('order_id');
+            $table->increments('id');
             $table->integer('user_id')->unsigned()->nullable();
             $table->string('user_name')->nullable();
             $table->json('items');

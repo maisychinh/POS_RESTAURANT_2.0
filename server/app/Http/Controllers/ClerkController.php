@@ -11,13 +11,7 @@ use App\Models\Order;
 session_start();
 
 class ClerkController extends Controller
-{
-    // public function checkClerk(){
-    //     $role = Session::get('role');
-    //     if($role && $role == 'clerk') return Redirect::to('/api/clerk');
-    //     else return Redirect::to('/api/home')->send();
-    // }
-    
+{   
     //GET: /clerk
     //Trả về danh sách các đơn hàng chờ duyệt và đã duyệt
     public function index(){

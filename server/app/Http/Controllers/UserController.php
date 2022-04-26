@@ -25,6 +25,7 @@ class UserController extends Controller
             Session::put('role', $result->role);
             Session::put('user_id', $result->user_id);
             Session::put('message', null);
+            unset($result->password);
             // if($result->role == 'member') return Redirect::to('/api/order');
             // else if($result->role == 'clerk') return Redirect::to('/api/clerk');
             // else if($result->role == 'chef') return Redirect::to('/api/chef');
