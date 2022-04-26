@@ -16,11 +16,12 @@ return new class extends Migration
         Schema::create('menu_items', function (Blueprint $table) {
             $table->increments('item_id');
             $table->string('name');
-            $table->float('price');
+            $table->integer('price');
             $table->text('description');
             $table->string('image');
-            $table->boolean('enable');
-            $table->string('type');
+            $table->integer('category_id')->unsigned();
+            $table->json('extras');
+            $table->boolean('enable')->default(true);
             $table->timestamps();
         });
     }

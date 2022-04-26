@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class Category extends Model
 {
     use HasFactory;
 
-    protected $table = 'users';
+    protected $table = 'categories';
     protected $guarded = [];
-    protected $primaryKey = 'user_id';
+    protected $primaryKey = 'category_id';
     public $timestamps = true;
 }

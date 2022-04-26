@@ -15,11 +15,12 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->increments('order_id');
-            $table->string('user_id');
-            $table->string('items_list');
-            $table->string('quantity');
-            $table->string('payment');
-            $table->enum('status', ['waitting', 'approved', 'paid', 'cooking', 'done']);
+            $table->integer('user_id')->unsigned()->nullable();
+            $table->string('user_name')->nullable();
+            $table->json('items');
+            $table->integer('total');
+            $table->enum('payment_method', ['cash', 'card', 'e_wallet'])->nullable();
+            $table->enum('status', ['waitting', 'cancelled', 'approved', 'paid', 'cooking', 'completed']);
             $table->timestamps();
         });
     }
