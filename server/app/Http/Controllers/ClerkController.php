@@ -16,8 +16,8 @@ class ClerkController extends Controller
     //Trả về danh sách các đơn hàng chờ duyệt và đã duyệt
     public function index(){
         //check Clerk
-        $role = Session::get('role');
-        if(!($role && $role == 'clerk')) return Redirect::to('/api/home');
+        // $role = Session::get('role');
+        // if(!($role && $role == 'clerk')) return Redirect::to('/api/home');
 
         $listOders = Order::wherIn('status', ['waitting', 'approved'])->get();
         return $listOders;
@@ -27,8 +27,8 @@ class ClerkController extends Controller
     //Trả về danh sách tất cả đơn hàng
     public function allOrder(){
         //check Clerk
-        $role = Session::get('role');
-        if(!($role && $role == 'clerk')) return Redirect::to('/api/home');
+        // $role = Session::get('role');
+        // if(!($role && $role == 'clerk')) return Redirect::to('/api/home');
 
         $allOrders = Order::all();
         return $allOrders;
@@ -38,8 +38,8 @@ class ClerkController extends Controller
     //Duyệt đơn hàng
     public function approveOrder($id){
         //check Clerk
-        $role = Session::get('role');
-        if(!($role && $role == 'clerk')) return Redirect::to('/api/home');
+        // $role = Session::get('role');
+        // if(!($role && $role == 'clerk')) return Redirect::to('/api/home');
 
         $order = Order::findOrFail($id);
         if($order->status == 'waitting'){
@@ -52,8 +52,8 @@ class ClerkController extends Controller
     //Không duyệt đơn hàng
     public function cancelOrder($id){
         //check Clerk
-        $role = Session::get('role');
-        if(!($role && $role == 'clerk')) return Redirect::to('/api/home');
+        // $role = Session::get('role');
+        // if(!($role && $role == 'clerk')) return Redirect::to('/api/home');
 
         $order = Order::findOrFail($id);
         if($order->status == 'waitting'){
@@ -66,8 +66,8 @@ class ClerkController extends Controller
     //Xác nhận đã thanh toán
     public function confirmPaymentOrder($id){
         //check Clerk
-        $role = Session::get('role');
-        if(!($role && $role == 'clerk')) return Redirect::to('/api/home');
+        // $role = Session::get('role');
+        // if(!($role && $role == 'clerk')) return Redirect::to('/api/home');
 
         $order = Order::findOrFail($id);
         if($order->status == 'approved'){

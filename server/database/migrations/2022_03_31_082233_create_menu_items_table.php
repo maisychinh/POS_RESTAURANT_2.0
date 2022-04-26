@@ -22,6 +22,7 @@ return new class extends Migration
             $table->integer('category')->unsigned();
             $table->json('extras');
             $table->float('rating',2,1)->default(0.0);
+            $table->integer('count_rating')->default(0);
             $table->boolean('enable')->default(true);
             $table->timestamps();
         });
