@@ -45,7 +45,7 @@ class ChefController extends Controller
         if($order->status == 'paid'){
             $order->update(['status' => 'cooking']);
         }
-        Redirect::to('/api/chef');
+        return $order;
     }
 
     //POST: /chef/complete/{id}
@@ -59,7 +59,7 @@ class ChefController extends Controller
         if($order->status == 'cooking'){
             $order->update(['status' => 'completed']);
         }
-        Redirect::to('/api/chef');
+        return $order;
     }
 
 
