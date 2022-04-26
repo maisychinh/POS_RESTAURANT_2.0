@@ -9,24 +9,32 @@ use Illuminate\support\Facades\Redirect;
 use App\Models\MenuItem;
 use App\Models\Feedback;
 
-
-session_start();
-
 class MemberController extends Controller
 {
     public function createFeedback(Request $request){
-        //check Member
-        $role = Session::get('role');
-        if(!($role && $role == 'manager')) return Redirect::to('/api/home');
+        $feedback = Feedback::create($request->all());
+        return $feedback;
+    }
 
-        $data['user_id'] = Session::get('user_id');
-        $data['item_id'] = $request->item_id;
-        $data['rating'] = $request->rating;
-        if (isset($request->review)) $data['review'] = $request->review;
+    public function deleteFeedback(Request $request){
+        $feedback_id = $request['feedback_id'];
+        $feedback = Feedback::findOrFail($feedback_id);
+        if($request->user_id == $feedback->user_id){
+            $feedback->delete();
+            return "Da xoa feedback";
+        }
+        else return "Khong the xoa feedback nay";
+    }
 
-        $feedback = Feedback::create($data);
-        $menu_item = MenuItem::findOrFail($request->item_id);
-        $new_rating = ($menu_item->rating + $data['rating']) / ($menu_item->count_rating + 1);
-        MenuItem::findOrFail($request->item_id)->update();
+    public function updateFeedback(Request $request){
+        $feedback_id = $request->feedback_id;
+        $review = $request->review;
+        
+        $feedback = Feedback::findOrFail($feedback_id);
+        if($request->user_id == $feedback->user_id){
+            $feedback->update(['review' => $review]);
+            return $feedback;
+        }
+        else return "Khong the chinh sua feedback nay";
     }
 }

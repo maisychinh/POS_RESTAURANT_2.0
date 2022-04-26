@@ -8,7 +8,7 @@ use App\Http\Controllers\ManagerController;
 use App\Http\Controllers\ClerkController;
 use App\Http\Controllers\ChefController;
 use App\Http\Controllers\OrderController;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MemberController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,16 +25,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-//Home
-Route::get('/', [HomeController::class, 'index']);
-
-Route::get('/home', [HomeController::class, 'index']);
-
-
 //User
-Route::get('/login', [UserController::class, 'showLogin']);
-
-Route::get('/login', [UserController::class, 'showRegister']);
 
 Route::post('/login', [UserController::class, 'login']);
 
@@ -45,8 +36,6 @@ Route::post('/register', [UserController::class, 'register']);
 
 //Make Order
 Route::get('/order', [OrderController::class, 'index']);
-
-Route::get('/order/payment', [OrderController::class, 'payment']);
 
 Route::get('/order/{id}', [OrderController::class, 'show']);
 
@@ -79,3 +68,11 @@ Route::post('/manager/menu-item/create', [ManagerController::class, 'createMenuI
 Route::post('/manager/menu-item/update', [ManagerController::class, 'updateMenuItem']);
 
 Route::post('/manager/menu-item/delete', [ManagerController::class, 'deleteMenuItem']);
+
+//Member
+
+Route::post('/member/feedback/create', [MemberController::class, 'createFeedback']);
+
+Route::post('/member/feedback/update', [MemberController::class, 'updateFeedback']);
+
+Route::post('/member/feedback/delete', [MemberController::class, 'deleteFeedback']);

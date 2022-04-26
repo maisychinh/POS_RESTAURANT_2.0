@@ -8,17 +8,11 @@ use Illuminate\support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 use App\Models\Order;
 
-session_start();
-
 class ChefController extends Controller
 {   
     //GET: /chef
     //Trả về danh sách các đơn hàng đã thanh toán và đang nấu
     public function index(){
-        //check Chef
-        // $role = Session::get('role');
-        // if(!($role && $role == 'chef')) return Redirect::to('/api/home');
-
         $listOders = Order::wherIn('status', ['paid', 'cooking'])->get();
         return $listOders;
     }
@@ -26,10 +20,6 @@ class ChefController extends Controller
     //GET: /chef/all
     //Trả về danh sách tất cả đơn hàng
     public function allOrder(){
-        //check Chef
-        // $role = Session::get('role');
-        // if(!($role && $role == 'chef')) return Redirect::to('/api/home');
-
         $allOrders = Order::all();
         return $allOrders;
     }
@@ -37,10 +27,6 @@ class ChefController extends Controller
     //POST: /chef/cook/{id}
     //Bắt đầu nấu
     public function cookDishesInOrder($id){
-        //check Chef
-        // $role = Session::get('role');
-        // if(!($role && $role == 'chef')) return Redirect::to('/api/home');
-
         $order = Order::findOrFail($id);
         if($order->status == 'paid'){
             $order->update(['status' => 'cooking']);
@@ -51,10 +37,6 @@ class ChefController extends Controller
     //POST: /chef/complete/{id}
     //Đã xong
     public function completeOrder($id){
-        //check Chef
-        // $role = Session::get('role');
-        // if(!($role && $role == 'chef')) return Redirect::to('/api/home');
-        
         $order = Order::findOrFail($id);
         if($order->status == 'cooking'){
             $order->update(['status' => 'completed']);

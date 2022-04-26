@@ -17,8 +17,7 @@ return new class extends Migration
             $table->increments('feedback_id');
             $table->integer('item_id')->unsigned();
             $table->integer('user_id')->unsigned();
-            $table->float('rating',2,1);
-            $table->text('review')->nullable();
+            $table->text('review');
             $table->timestamps();
         });
     }

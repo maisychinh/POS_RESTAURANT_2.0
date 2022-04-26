@@ -9,8 +9,6 @@ use Illuminate\Support\Facades\Session;
 use App\Models\Order;
 use App\Models\MenuItem;
 
-session_start();
-
 class OrderController extends Controller
 {
     //GET: /order
@@ -20,41 +18,11 @@ class OrderController extends Controller
         return $allItems;
     }
 
-    //GET: /order/payment
-    //Trả về trang thanh toán
-    public function payment(){
-        return 'Day la trang payment';
-    }
-
     //POST: /order/create
     //Đưa đơn hàng vào db
     public function create(Request $request){
         $order = Order::create($request->all());
         return $order;
-        // $data['user_id'] = $request['user_id'];
-        // $data['user_name'] = $request['user_name'];
-        // $data['items'] = $request['items'];
-        // $data['payment_method'] = $request['payment_method'];
-        // $data['status'] = $request['status'];
-
-        // $total = 0;
-        // $count = 0;
-        // foreach($request['items'] as $item){
-        //     $total_this_item = 0;
-        //     $this_item = MenuItem::find($item['item']);
-        //     $data['items'][$count]['item'] = $this_item;
-        //     $total_this_item += $this_item['price'];
-        //     foreach($item['extras'] as $extra){
-        //         foreach($this_item['extras'] as $this_item_extra) {
-        //             if($this_item_extra['name'] == $extra){
-        //                 $total_this_item += $this_item_extra['price'];
-        //             }
-        //         }
-        //     }
-        //     $total += $total_this_item * $item['quantity'];
-        //     $count++;
-        // }
-        // $data['total'] = $total;
     }
 
     //POST: /order/payment-method
@@ -62,9 +30,12 @@ class OrderController extends Controller
     public function choosePaymentMethod(Request $request){
         $order_id = $request->order_id;
         $payment_method = $request->payment_method;
-        Order::findOrFail($order_id)->update(['payment_method' => $payment_method]);
-        $result = Order::findOrFail($order_id);
-        return $result;
+
+        $order = Order::findOrFail($order_id);
+        if($order->status == 'approved'){
+            $order->update(['payment_method' => $payment_method, 'status' => 'paid']);
+        }
+        return $order;
     }
 
     //GET: /order/{id}
