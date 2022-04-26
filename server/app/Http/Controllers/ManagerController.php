@@ -37,18 +37,9 @@ class ManagerController extends Controller
         // if(!($role && $role == 'manager')) return Redirect::to('/api/home');
         
         $item_id = $request['item_id'];
-        $menu_item = MenuItem::find($item_id);
-
-        $menu_item['name'] = $request['name'];
-        $menu_item['description'] = $request['description'];
-        $menu_item['image'] = $request['image'];
-        $menu_item['category_id'] = $request['category_id'];
-        $menu_item['extras'] = $request['extras'];
-        $menu_item['enable'] = $request['enable'];
-
-        $menu_item->save();
-
-        return $menu_item;
+        MenuItem::findOrFail($item_id)->update($request->all());
+        $result = MenuItem::findOrFail($item_id);
+        return $result;
     }
 
     public function deleteMenuItem(Request $request){
@@ -57,6 +48,6 @@ class ManagerController extends Controller
         // if(!($role && $role == 'manager')) return Redirect::to('/api/home');
 
         $item_id = $request['item_id'];
-        $menu_item = MenuItem::find($item_id)->delete();
+        MenuItem::findOrFail($item_id)->delete();
     }
 }

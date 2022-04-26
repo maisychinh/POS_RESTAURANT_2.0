@@ -25,11 +25,12 @@ class UserController extends Controller
             Session::put('role', $result->role);
             Session::put('user_id', $result->user_id);
             Session::put('message', null);
-            if($result->role == 'member') return Redirect::to('/api/order');
-            else if($result->role == 'clerk') return Redirect::to('/api/clerk');
-            else if($result->role == 'chef') return Redirect::to('/api/chef');
-            else if($result->role == 'manager') return Redirect::to('/api/manager');
-            else return Redirect::to('/api/home'); 
+            // if($result->role == 'member') return Redirect::to('/api/order');
+            // else if($result->role == 'clerk') return Redirect::to('/api/clerk');
+            // else if($result->role == 'chef') return Redirect::to('/api/chef');
+            // else if($result->role == 'manager') return Redirect::to('/api/manager');
+            // else return Redirect::to('/api/home'); 
+            return $result;
         }
         else {
             $request->session()->put('message', 'Tài khoản hoặc mật khẩu chưa đúng');
