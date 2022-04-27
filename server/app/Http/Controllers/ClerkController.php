@@ -11,15 +11,15 @@ use App\Models\Order;
 class ClerkController extends Controller
 {   
     //GET: /clerk
-    //Trả về danh sách các đơn hàng chờ duyệt và đã duyệt
+    //Trả về danh sách các đơn hàng chờ duyệt
     public function index(){
-        $listOders = Order::wherIn('status', ['waitting', 'approved'])->get();
+        $listOders = Order::whereIn('status', ['waitting'])->get();
         return $listOders;
     }
 
-    //GET: /clerk/get-all
+    //GET: /clerk/get-all-orders
     //Trả về danh sách tất cả đơn hàng
-    public function allOrder(){
+    public function getAllOrders(){
         $allOrders = Order::all();
         return $allOrders;
     }

@@ -8,6 +8,7 @@ use Illuminate\support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 use App\Models\User;
 
+session::start();
 class UserController extends Controller
 {
     public function login(Request $request){
@@ -15,6 +16,7 @@ class UserController extends Controller
         $password = MD5($request->password);
         $result = User::where('email',$email)->where('password',$password)->first();
         if($result) {
+            Session::put('role', 'manager');
             unset($result->password);
             return $result;
         }

@@ -13,13 +13,13 @@ class ChefController extends Controller
     //GET: /chef
     //Trả về danh sách các đơn hàng đã thanh toán và đang nấu
     public function index(){
-        $listOders = Order::wherIn('status', ['paid', 'cooking'])->get();
+        $listOders = Order::whereIn('status', ['paid', 'cooking'])->get();
         return $listOders;
     }
 
-    //GET: /chef/all
+    //GET: /chef/get-all-orders
     //Trả về danh sách tất cả đơn hàng
-    public function allOrder(){
+    public function getAllOrders(){
         $allOrders = Order::all();
         return $allOrders;
     }

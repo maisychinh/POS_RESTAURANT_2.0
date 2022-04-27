@@ -12,6 +12,7 @@ use App\Models\MenuItem;
 class ManagerController extends Controller
 {  
     public function index(){
+        return Session::get('role');
         $allItems = MenuItem::all();
         return $allItems;
     }

@@ -46,6 +46,8 @@ Route::post('/order/payment-method', [OrderController::class, 'choosePaymentMeth
 //Clerk
 Route::get('/clerk', [ClerkController::class, 'index']);
 
+Route::get('/clerk/get-all-orders', [ClerkController::class, 'getAllOrders']);
+
 Route::post('/clerk/approve/{id}', [ClerkController::class, 'approveOrder']);
 
 Route::post('/clerk/cancel/{id}', [ClerkController::class, 'cancelOrder']);
@@ -55,6 +57,8 @@ Route::post('/clerk/confirm-payment/{id}', [ClerkController::class, 'confirmPaym
 
 //Chef
 Route::get('/chef', [ChefController::class, 'index']);
+
+Route::get('/chef/get-all-orders', [ChefController::class, 'getAllOrders']);
 
 Route::post('/chef/cook/{id}', [ChefController::class, 'cookDishesInOrder']);
 
