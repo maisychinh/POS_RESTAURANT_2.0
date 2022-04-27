@@ -7,7 +7,7 @@ type extras = {
   items: extra[];
   totalPriceOfExtras: number;
 };
-type item = {
+export type item = {
   id: string;
   name: string;
   price: number;

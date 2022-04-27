@@ -17,7 +17,7 @@ const Cart: React.FC = (props) => {
   return (
     <div className={classes.cart}>
       <HeaderCart totalItems={totalItems}></HeaderCart>
-      <div className={classes.cartbody}>
+      <div className={classes.cartbody+" no-scrollbar"}>
       {DUMMY_CARTITEMS.map((item) => (
         <CartItem
           key ={counter++}
@@ -31,7 +31,7 @@ const Cart: React.FC = (props) => {
         ></CartItem>
       ))}
       </div>
-      <FooterCart totalAmount={totalPrice}></FooterCart>
+      <FooterCart items={DUMMY_CARTITEMS} totalAmount={totalPrice}></FooterCart>
     </div>
   );
 };

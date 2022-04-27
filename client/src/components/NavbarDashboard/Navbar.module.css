@@ -1,0 +1,16 @@
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 3rem 1rem 2rem;
+}
+.search {
+   display: flex;
+   align-items: center;
+}
+.search svg{
+   font-size: 2rem;
+   margin-right: 1rem;
+   color: rgb(138, 138, 138);
+}

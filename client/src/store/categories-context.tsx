@@ -9,6 +9,7 @@ export enum Categories {
   DRINK,
   ICESCREAM,
   NONE,
+  ALL
 }
 type category = {
   categoryId: number;

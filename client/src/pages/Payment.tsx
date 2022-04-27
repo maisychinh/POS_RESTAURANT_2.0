@@ -1,6 +1,11 @@
 import { AiOutlineCreditCard, AiOutlineQuestionCircle } from 'react-icons/ai';
+import { useHistory } from 'react-router-dom';
 import classes from './Styles/Payment.module.css'
 const Payment: React.FC = (props) => {
+  const history =useHistory()
+  const onPayHandler = ()=>{
+    history.push("/status")
+  }
   return (
     <div className={classes.payment}>
       <div className={classes.top}>
@@ -42,8 +47,8 @@ const Payment: React.FC = (props) => {
         <AiOutlineQuestionCircle></AiOutlineQuestionCircle>
         <input type="text" placeholder="CVV"></input>
       </div>
-      <div className={classes.paybutton}>Pay NOK 25.00</div>
-      <div className={classes.cancelbutton}>Cancel payment</div>
+      <button onClick={onPayHandler} className={classes.paybutton}>Pay NOK 25.00</button>
+      <button className={classes.cancelbutton}>Cancel payment</button>
         <div className={classes.textFooter}>
           <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Flag_of_the_United_Kingdom_%282-3%29.svg/1200px-Flag_of_the_United_Kingdom_%282-3%29.svg.png" alt="Flag of the United"></img>
           <div className={classes.textFooter1}>Dintero</div>

@@ -6,7 +6,7 @@ import { cartActions } from "../../store/cart-context";
 import { useRef } from "react";
 import classes from "./Meal.module.css";
 const Meal: React.FC<{
-  id: string;
+  id: number;
   image: string;
   price: number;
   name: string;

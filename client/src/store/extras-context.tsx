@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-type item = {
+export type item = {
   name: string;
   price: number;
 };

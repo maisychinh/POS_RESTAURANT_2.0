@@ -13,9 +13,16 @@ const showHideSlice = createSlice({
         showDetail: false,
         showCart: false,
         showNotification: false,
-        success: false
+        success: false,
+        showForm: false,
     },
     reducers:{  
+        showFormHandler: (state)=>{
+            state.showDetail = false;
+            state.showNotification = false;
+            state.showCart = false;
+            state.showForm = true;
+        },
         showDetailHandler :(state,action)=>{
             state.item = action.payload
             state.showCart = false;
@@ -27,6 +34,7 @@ const showHideSlice = createSlice({
             state.showCart = false;
             state.showNotification = false;
             state.success = false;
+            state.showForm = false;
             state.item={
                 id:'',
                 name: '',

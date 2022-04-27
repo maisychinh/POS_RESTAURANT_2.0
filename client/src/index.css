@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -12,8 +15,108 @@ body {
 #overlays-cart {
   overflow-y: hidden;
 }
+
 @media (min-width: 768px) {
   #overlays-cart {
     display: none;
   }
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+
+/* Tracking order */
+.bs4-order-tracking {
+  margin-bottom: 30px;
+  overflow: hidden;
+  color: #878788;
+  padding-left: 0px;
+  margin-top: 30px
+}
+
+.bs4-order-tracking li {
+  list-style-type: none;
+  font-size: 20px;
+  width: 20%;
+  float: left;
+  position: relative;
+  font-weight: 400;
+  color: #878788;
+  text-align: center
+}
+
+.bs4-order-tracking li:first-child:before {
+  margin-left: 15px !important;
+  padding-left: 11px !important;
+  text-align: left !important
+}
+
+.bs4-order-tracking li:last-child:before {
+  margin-right: 5px !important;
+  padding-right: 11px !important;
+  text-align: right !important
+}
+
+.bs4-order-tracking li>div {
+  color: #fff;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  line-height: 29px;
+  font-size: 12px;
+  background: #878788;
+  border-radius: 50%;
+  margin: auto;
+}
+.bs4-order-tracking li>div svg {
+  font-size: 3rem;
+  display: initial;
+  margin: 30% 0;
+}
+.bs4-order-tracking li:after {
+  content: '';
+  width: 150%;
+  height: 10px;
+  background: #878788;
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 40%;
+  z-index: -1
+}
+
+.bs4-order-tracking li:first-child:after {
+  left: 50%
+}
+
+.bs4-order-tracking li:last-child:after {
+  right: 50% !important;
+  width: 50% !important
+}
+
+.bs4-order-tracking li.active {
+  font-weight: bold;
+  color: black
+}
+
+.bs4-order-tracking li.active>div {
+  background: #009854
+}
+
+.bs4-order-tracking li.active:after {
+  background: #009854
+}
+
+.card-timeline {
+  background-color: #fff;
+  z-index: 0;
+  width: 80%;
+  height: 100%;
 }

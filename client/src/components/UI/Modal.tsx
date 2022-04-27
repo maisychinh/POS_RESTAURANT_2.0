@@ -30,15 +30,16 @@ const portalElementNotification = document.getElementById(
 const Modal: React.FC = (props) => {
   const isShowCart = useAppSelector((state) => state.showhide.showCart);
   const isShowDetail = useAppSelector((state) => state.showhide.showDetail);
+  const isShowForm  = useAppSelector(state=>state.showhide.showForm)
   const isShowNotification = useAppSelector(
     (state) => state.showhide.showNotification
   );
   
   return (
     <Fragment>
-      {isShowDetail &&
+      {(isShowDetail || isShowForm)&&
         ReactDOM.createPortal(<Backdrop></Backdrop>, portalElement)}
-      {isShowDetail &&
+      {(isShowDetail || isShowForm)&&
         ReactDOM.createPortal(
           <ModalOverlay>{props.children}</ModalOverlay>,
           portalElement

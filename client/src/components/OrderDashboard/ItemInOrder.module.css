@@ -1,0 +1,75 @@
+.extras{
+    font-weight: bold;
+    font-size: 0.75rem;
+}
+.extras div {
+    margin: 0.1rem 0 0 0;
+    color: rgb(128, 128, 128);
+}
+.actions p{
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+.extras span{
+    float: right;
+    color: #F00008;
+}
+.cartitem{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    padding: 0.3rem 0.3rem;
+    border-bottom: 2px solid #ccc;
+}
+.name{
+    font-weight: bold;
+    height:1rem;
+    font-size: 0.7rem;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    margin-left: 1rem;
+    width: 70%;
+}
+.image img{
+    width: 4rem;
+    height: 3rem;
+    border-radius: 5px;
+    margin: 5%;
+    object-fit: cover;
+}
+.contentfooter{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.actions{
+    display: flex;
+    align-items: center; 
+    justify-content:space-between;   
+    width:3rem;
+}
+.actions button{
+    background-color: white;
+    font-weight: bold;
+    font-size: 0.9rem;
+    width: 1.3rem;
+    height: 1.3rem;
+    border-radius: 5px;
+    text-align: center;
+    margin: 0rem 0.3rem;
+}
+.tax {
+    text-align: right;
+    font-size: 0.8rem;
+}
+.tax div:first-child{
+    font-weight: bold;
+    color: #F00008;
+    font-size: 0.8rem;
+}
+.tax div:last-child{
+    font-size: 0.6rem;
+}
